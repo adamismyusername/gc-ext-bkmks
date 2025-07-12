@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark Dashboard Settings</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="options.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+    <div class="settings-container max-w-4xl mx-auto px-6 py-8">
+        <!-- Header -->
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-slate-100 mb-2">Dashboard Settings</h1>
+            <p class="text-slate-400">Customize your bookmark dashboard experience</p>
+        </header>
+
+        <!-- Settings Sections -->
+        <div class="space-y-8">
+            <!-- Layout Settings -->
+            <section class="bg-slate-800 border border-slate-700 rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4 text-slate-100">Layout Settings</h2>
+                
+                <div class="space-y-4">
+                    <!-- Card Width -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <label for="card-width" class="text-sm font-medium text-slate-200">Card Size</label>
+                            <p class="text-xs text-slate-400">Controls how many cards appear per row</p>
+                        </div>
+                        <select id="card-width" class="bg-slate-700 border border-slate-600 rounded px-3 py-1 text-sm min-w-[120px]">
+                            <option value="xs">X-Small (~5 per row)</option>
+                            <option value="sm">Small (~4 per row)</option>
+                            <option value="md">Medium (~3 per row)</option>
+                            <option value="lg">Large (~2 per row)</option>
+                            <option value="xl">X-Large (1 per row)</option>
+                        </select>
+                    </div>
+
+                    <!-- Container Margin -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <label for="container-margin" class="text-sm font-medium text-slate-200">Page Margins</label>
+                            <p class="text-xs text-slate-400">Controls the spacing around the dashboard</p>
+                        </div>
+                        <select id="container-margin" class="bg-slate-700 border border-slate-600 rounded px-3 py-1 text-sm min-w-[120px]">
+                            <option value="none">None (0%)</option>
+                            <option value="narrow">Narrow (5%)</option>
+                            <option value="medium">Medium (10%)</option>
+                            <option value="wide">Wide (15%)</option>
+                            <option value="xwide">X-Wide (20%)</option>
+                        </select>
+                    </div>
+
+                    <!-- Preview Button -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <label class="text-sm font-medium text-slate-200">Live Preview</label>
+                            <p class="text-xs text-slate-400">Changes are applied immediately for preview</p>
+                        </div>
+                        <button id="preview-settings" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors">
+                            Preview Changes
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Display Settings -->
+            <section class="bg-slate-800 border border-slate-700 rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4 text-slate-100">Display Settings</h2>
+                
+                <div class="space-y-4">
+                    <!-- Uniform Card Height -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <label for="uniform-height" class="text-sm font-medium text-slate-200">Uniform Card Height</label>
+                            <p class="text-xs text-slate-400">Make all cards the same height for a cleaner grid layout</p>
+                        </div>
+                        <input type="checkbox" id="uniform-height" class="toggle">
+                    </div>
+
+                    <!-- Grid Columns (Future feature) -->
+                    <div class="flex items-center justify-between opacity-50">
+                        <div>
+                            <label class="text-sm font-medium text-slate-200">Grid Columns (Legacy)</label>
+                            <p class="text-xs text-slate-400">Replaced by Card Size setting above</p>
+                        </div>
+                        <select disabled class="bg-slate-700 border border-slate-600 rounded px-3 py-1 text-sm">
+                            <option>Auto</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Management -->
+            <section class="bg-slate-800 border border-slate-700 rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4 text-slate-100">Data Management</h2>
+                
+                <div class="space-y-4">
+                    <!-- Export/Import (Future feature) -->
+                    <div class="opacity-50">
+                        <h3 class="text-sm font-medium text-slate-200 mb-2">Backup & Restore (Coming soon)</h3>
+                        <div class="flex gap-3">
+                            <button disabled class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm opacity-50">
+                                Export Settings
+                            </button>
+                            <button disabled class="bg-slate-600 text-white px-4 py-2 rounded-lg text-sm opacity-50">
+                                Import Settings
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Reset Data -->
+                    <div>
+                        <h3 class="text-sm font-medium text-slate-200 mb-2">Reset Dashboard</h3>
+                        <p class="text-xs text-slate-400 mb-3">This will delete all your cards and links and restore the default setup</p>
+                        <button id="reset-data" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm transition-colors">
+                            Reset to Default
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chrome Integration (Future feature) -->
+            <section class="bg-slate-800 border border-slate-700 rounded-lg p-6 opacity-50">
+                <h2 class="text-xl font-semibold mb-4 text-slate-100">Chrome Integration (Coming soon)</h2>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <label class="text-sm font-medium text-slate-200">Import Chrome Bookmarks</label>
+                            <p class="text-xs text-slate-400">Browse and import bookmarks from your Chrome bookmarks</p>
+                        </div>
+                        <button disabled class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm opacity-50">
+                            Browse Bookmarks
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <label class="text-sm font-medium text-slate-200">Sync with Chrome</label>
+                            <p class="text-xs text-slate-400">Keep dashboard bookmarks synced with Chrome bookmarks</p>
+                        </div>
+                        <input type="checkbox" disabled class="toggle opacity-50">
+                    </div>
+                </div>
+            </section>
+
+            <!-- About -->
+            <section class="bg-slate-800 border border-slate-700 rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4 text-slate-100">About</h2>
+                
+                <div class="space-y-2 text-sm text-slate-300">
+                    <p><strong>Version:</strong> 0.0.3</p>
+                    <p><strong>Created:</strong> Bookmark Dashboard Extension</p>
+                    <p class="text-slate-400">A customizable new tab page with drag-and-drop bookmark management and smart responsive layouts.</p>
+                    
+                    <!-- New in this version -->
+                    <div class="mt-4 p-3 bg-slate-700 rounded-lg">
+                        <p class="font-medium text-slate-200 mb-2">New in v0.0.3:</p>
+                        <ul class="text-xs text-slate-400 space-y-1">
+                            <li>• Smart responsive card sizing with 5 size options</li>
+                            <li>• Configurable page margins for better screen utilization</li>
+                            <li>• Live preview of layout changes</li>
+                            <li>• Enhanced ultra-wide screen support</li>
+                            <li>• Mobile-first responsive design improvements</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Save Button -->
+        <div class="mt-8 flex justify-end gap-3">
+            <button id="reset-layout" class="bg-slate-600 hover:bg-slate-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                Reset Layout
+            </button>
+            <button id="save-settings" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+                Save Settings
+            </button>
+        </div>
+
+        <!-- Status Message -->
+        <div id="status-message" class="mt-4 text-center text-sm hidden">
+            <div class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg">
+                Settings saved successfully!
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/theme-manager.js"></script>
+    <script src="options.js"></script>
+</body>
+</html>
